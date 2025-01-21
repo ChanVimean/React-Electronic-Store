@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --blue--700: #920bc0;
+  --blue--600: #b41dee;
+  --blue--500: #c632ff;
+  --blue--400: #da6aff;
+  --blue--300: #e7a1ff;
+  --blue--200: #efcbff;
+}
+
+//* ------------------------- { Background } -------------------------
+
+.bg-blue-700 {
+  background-color: var(--blue--700) !important;
+}
+
+.bg-blue-600 {
+  background-color: var(--blue--600) !important;
+}
+
+.bg-blue-500 {
+  background-color: var(--blue--500) !important;
+}
+
+.bg-blue-400 {
+  background-color: var(--blue--400) !important;
+}
+
+.bg-blue-300 {
+  background-color: var(--blue--300) !important;
+}
+
+.bg-blue-200 {
+  background-color: var(--blue--200) !important;
+}
+
+//* ------------------------- { Text } -------------------------
+
+.text-blue-700 {
+  color: var(--blue--700) !important;
+}
+
+.text-blue-600 {
+  color: var(--blue--600) !important;
+}
+
+.text-blue-500 {
+  color: var(--blue--500) !important;
+}
+
+.text-blue-400 {
+  color: var(--blue--400) !important;
+}
+
+.text-blue-300 {
+  color: var(--blue--300) !important;
+}
+
+.text-blue-200 {
+  color: var(--blue--200) !important;
+}
+
+//* ------------------------- { Font } -------------------------
+
+.font-poppins {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+//* ------------------------- { Hover } -------------------
+.hover-blue-300:hover {
+  color: var(--blue--300) !important;
+  transition: 0.15s ease-in;
+}
+.bg-hover-blue-500:hover {
+  background-color: var(--blue--500) !important;
+}
+
+.hover-scale:hover {
+  transform: scale(1.2) rotate(3deg) !important;
+  cursor: pointer;
+}
+
+.bg-hover:hover {
+  cursor: pointer;
+  background-color: var(--blue--500) !important;
+  color: whitesmoke !important;
+}
+
+//* ------------------------- { Focus } -------------------
+
+.focus-blue-400:focus {
+  color: var(--blue--400) !important;
+}
+
+.transition {
+  transition: 0.4s ease-in-out !important;
+}
+
+.scale {
+  transform: scale(1.1) !important;
+}
