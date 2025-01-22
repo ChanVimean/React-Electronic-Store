@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import ProductContext from "../store/ProductProvider"
 import { IoTrashBinSharp } from "react-icons/io5"
 import { BsCart4 } from "react-icons/bs"
@@ -7,6 +7,16 @@ import { BsCart4 } from "react-icons/bs"
 const CartPage = () => {
 
   const { cart, removeFromCart, increaseQty, decreaseQty, totalPrice } = useContext(ProductContext)
+  const [shippingFee] = useState(9.9)
+  const [subtotal, setSubtotal] = useState(0)
+  const [total, setTotal] = useState(0)
+
+  useEffect(() => {
+    const calSubtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    setSubtotal(calSubtotal)
+    setTotal(calSubtotal + shippingFee)
+  }, [cart, shippingFee])
+
 
   return (
     <div className="container text-center font-poppins p-0">
@@ -65,20 +75,20 @@ const CartPage = () => {
         </div>
 
         {/* Summary */}
-        <div style={{ height: 400 }} className="col-12 col-lg-4 p-0 border shadow">
-          <div className="w-100 container-fluid p-4 bg-blue-400">
-            <h2>Summary</h2>
+        <div className="col-12 col-lg-4 p-0 mb-5 border shadow bg-blue-200">
+          <div className="w-100 container-fluid p-4 mb-4">
+            <h2 className="mb-5 mt-3 fs-3 fw-bold">Summary</h2>
             <div className="w-100 mb-3 d-flex justify-content-between align-items-center">
               <p>Subtotal</p>
-              <p>99.9$</p>
+              <p>{subtotal.toFixed(2)}$</p>
             </div>
             <div className="w-100 mb-3 d-flex justify-content-between align-items-center">
               <p>Shipping</p>
-              <p>19.9$</p>
+              <p>{shippingFee}$</p>
             </div>
             <div className="w-100 mb-3 d-flex justify-content-between align-items-center">
               <h2>Total</h2>
-              <h2>129.9$</h2>
+              <h2>{total.toFixed(2)}$</h2>
             </div>
             <input
               type="text"
