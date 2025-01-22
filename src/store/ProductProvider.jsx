@@ -68,26 +68,32 @@ export const ProductProvider = ({ children }) => {
 
   // Increase Quantity
   const increaseQty = (productId) => {
-    setCart((prevCart) => {
-      prevCart.map((item) => item.id === productId
-        ? {...item, quantity: item.quantity + 1}
-        : item
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === productId
+          ? { ...item, quantity: item.quantity + 1}
+          : item
       )
-    })
+    )
   }
 
   // Decrease Quantity
   const decreaseQty = (productId) => {
-    setCart((prevCart) => {
+    setCart((prevCart) =>
       prevCart.map((item) => item.id === productId
         ? {...item, quantity: Math.max(item.quantity - 1, 1)}
         : item
       )
-    })
+    )
+  }
+
+  // Total Price
+  const totalPrice = () => {
+    
   }
 
   return (
-    <ProductContext.Provider value={{ product, cart, addToCart, removeFromCart, increaseQty, decreaseQty }}>
+    <ProductContext.Provider value={{ product, cart, addToCart, removeFromCart, increaseQty, decreaseQty, totalPrice }}>
       { children }
     </ProductContext.Provider>
   )

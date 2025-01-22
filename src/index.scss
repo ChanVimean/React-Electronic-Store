@@ -2,12 +2,17 @@
 
 
 :root {
+  // Blue
   --blue--700: #920bc0;
   --blue--600: #b41dee;
   --blue--500: #c632ff;
   --blue--400: #da6aff;
   --blue--300: #e7a1ff;
   --blue--200: #efcbff;
+
+  // Red
+  --red-500: #ff4c4c;
+  --red-900: #881414;
 }
 
 //* ------------------------- { Background } -------------------------
@@ -60,6 +65,10 @@
 
 .text-blue-200 {
   color: var(--blue--200) !important;
+}
+
+.text-red-500 {
+  color: var(--red-500) !important;
 }
 
 //* ------------------------- { Font } -------------------------
