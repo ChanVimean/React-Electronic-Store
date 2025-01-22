@@ -6,7 +6,7 @@ import { BsCart4 } from "react-icons/bs"
 
 const CartPage = () => {
 
-  const { cart, removeFromCart, increaseQty, decreaseQty, totalPrice } = useContext(ProductContext)
+  const { cart, removeFromCart, increaseQty, decreaseQty } = useContext(ProductContext)
   const [shippingFee] = useState(9.9)
   const [subtotal, setSubtotal] = useState(0)
   const [total, setTotal] = useState(0)

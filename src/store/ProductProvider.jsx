@@ -87,13 +87,9 @@ export const ProductProvider = ({ children }) => {
     )
   }
 
-  // Total Price
-  const totalPrice = () => {
-    
-  }
 
   return (
-    <ProductContext.Provider value={{ product, cart, addToCart, removeFromCart, increaseQty, decreaseQty, totalPrice }}>
+    <ProductContext.Provider value={{ product, cart, addToCart, removeFromCart, increaseQty, decreaseQty }}>
       { children }
     </ProductContext.Provider>
   )
