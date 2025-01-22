@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { NavLink } from "react-router-dom"
+import ProductContext from "../store/ProductProvider"
+import { FaCartArrowDown, FaHeart } from "react-icons/fa"
+import { AiFillProduct } from "react-icons/ai"
 
 
 const Card = () => {
 
-  
-  const [isHover, setIsHover] = useState(false)
-  const handleMouseEnter = () => setIsHover(true)
-  const handleMouseLeave = () => setIsHover(false)
+  const {product, addToCart} = useContext(ProductContext)
+  const [isHover, setIsHover] = useState(null)
+  const handleMouseEnter = (index) => setIsHover(index)
+  const handleMouseLeave = () => setIsHover(null)
 
   return (
     <div>
@@ -22,32 +25,55 @@ const Card = () => {
       </div>
 
       <div className="py-4 m-0 row">
-        <div className="col-12 col-md-4 col-lg-3">
-          <div className="card rounded-0" onMouseOver={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <div style={{ height: 280 }} className="overflow-hidden w-100 bg-info position-relative">
-              <div className={`position-absolute top-50 start-50 translate-middle transition ${isHover ? 'opacity-1 z-3' : 'opacity-0'}`}>
-                <button>H</button>
-                <button>H</button>
-                <button>H</button>
-                <button>H</button>
+        {
+          product.map((e, i) => {
+            return (
+              <div className="col-12 col-md-4 col-lg-3 my-2" key={i}>
+                <div className={`card rounded-0 ${isHover === i ? "focused" : ""} `}
+                     onMouseEnter={() => handleMouseEnter(i)}
+                     onMouseLeave={ handleMouseLeave }
+                >
+                  <div style={{ height: 280 }} className="overflow-hidden w-100 bg-info position-relative">
+                    {/* Hidden Button */}
+                    <div className={`position-absolute top-50 start-50 translate-middle transition ${isHover === i ? "opacity-1 z-3" : "opacity-0"}`}>
+                      <button className="btn btn-light mx-1"
+                        onClick={(event) => {
+                          event.preventDefault()
+                          addToCart(e.id)
+                        }
+                      }>
+                        <FaCartArrowDown />
+                      </button>
+                      <button className="btn btn-light mx-1">
+                        <FaHeart />
+                      </button>
+                      <button className="btn btn-light mx-1">
+                        <AiFillProduct />
+                      </button>
+                    </div>
+                    <img src={e.image}
+                        alt="Image"
+                        className={`w-100 h-100 object-fit-cover ${isHover === i ? 'scale z-1 brightness transition' : 'transition'}`}
+                    />
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="text-center shadow-sm card-body font-poppins">
+                    <NavLink className="text-black hover-blue-300 text-decoration-none fs-5 text-limit-1">
+                      {e.name}
+                    </NavLink>
+                    <p className="m-0">{e.price.toFixed(2)}</p>
+                    <p>
+                      <span className="text-warning fw-bold">{e.rating}</span>
+                      Rating
+                    </p>
+                  </div>
+                </div>
               </div>
-              <img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2024/11/nvidia-geforce-rtx-5070-ti-guide.jpg"
-                   alt="Image"
-                   className={`w-100 h-100 object-fit-cover transition ${isHover ? 'scale z-1' : ''}`}
-              />
-            </div>
-            <div className="text-center shadow-sm card-body font-poppins">
-              <NavLink className="text-black hover-blue-300 text-decoration-none fs-5">
-                Product Name
-              </NavLink>
-              <p className="m-0">$9.99</p>
-              <p>
-                <span className="text-warning fw-bold">4.5</span>
-                Rating
-              </p>
-            </div>
-          </div>
-        </div>
+            )
+          })
+        }
+
       </div>
 
     </div>

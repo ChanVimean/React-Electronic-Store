@@ -8,14 +8,16 @@ const PageNotFound = () => {
   }
 
   return (
-    <div className="text-center w-100 vh-100">
-      <img 
-        src="https://i.pinimg.com/originals/0e/c0/db/0ec0dbf1e9a008acb9955d3246970e15.gif" 
-        alt="404"
-      />
-      <br />
+    <div style={{ height: "100vh", width: "100%" }} className="text-center position-relative">
+      <div className="position-absolute z-1 w-100 h-100">
+        <img 
+          src="https://freefrontend.com/assets/img/html-funny-404-pages/HTML-404-Page.gif"
+          alt="404"
+          className="w-100 h-100 object-fit-cover"
+        />
+      </div>
       <button
-        className="my-5 bg-blue-700 btn text-light fs-3 bg-hover-blue-500"
+        className="btn bg-blue-700 text-light fs-3 bg-hover-blue-500 position-absolute z-2 top-50 start-50 translate-middle"
         onClick={handleHomePage}
       >
         Go Back

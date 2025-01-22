@@ -1,12 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { FaSearch } from "react-icons/fa"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { FaCartShopping } from "react-icons/fa6"
 import { NavLink } from "react-router-dom"
+import ProductContext from "../store/ProductProvider"
 
 const Header = () => {
 
-  const [isLogin, setIsLogin] = useState(false)
+  const { cart } = useContext(ProductContext)
+  const [isLogin, setIsLogin] = useState(true)
 
 
   return (
@@ -37,7 +39,7 @@ const Header = () => {
               isLogin ? (
                 <div className="d-flex align-items-center justify-content-end">
                   
-                  <div style={{ width: 60,  height: 60 }}
+                  <div style={{ width: 45,  height: 45 }}
                         className="mx-3 overflow-hidden rounded-circle bg-danger">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/800px-Cat_November_2010-1a.jpg"
                           alt=""
@@ -107,27 +109,27 @@ const Header = () => {
               </li>
               <li>
                 <NavLink to={"/product"} className="nav-link hover-blue-300 focus-blue-400 text-light ">
-                  Shop
+                  Product
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/" className="nav-link hover-blue-300 focus-blue-400 text-light ">
+                <NavLink to="/contact" className="nav-link hover-blue-300 focus-blue-400 text-light ">
                   Contact
                 </NavLink>
               </li>
             </ul>
 
             <div className="d-flex justify-content-center align-items-center">        
-              <a href="#" className="nav-link hover-blue-300 text-light focus-blue-400">
+              <NavLink to={'/cart'} className="nav-link hover-blue-300 text-light focus-blue-400">
                 <button type="button" className="border btn text-light position-relative me-3 rounded-0">
                   <FaCartShopping />
-                  <span className="top-0 position-absolute start-100 translate-middle badge rounded-pill bg-danger">
-                    99+
+                    <span className="top-0 position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                      {cart.length > 0 ? cart.length : (0)}
                     <span className="visually-hidden">unread messages</span>
                   </span>
                 </button>
                 Shopping Cart
-              </a>
+              </NavLink>
             </div>
 
           </div>
