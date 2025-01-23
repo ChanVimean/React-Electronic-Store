@@ -30,17 +30,18 @@ const CartPage = () => {
               Array.isArray(cart) ? (
                 cart.map((e, i) => {
                   return (
-                    <li className="d-flex align-items-center justify-content-between border-2 border-bottom" key={i}>
+                    <li className="d-flex align-items-center justify-content-between border-2 border-bottom mb-4" key={i}>
                       <button
                         type="button"
                         className="fs-3 text-red-500 ms-4 text-center btn btn-outline-none"
+                        style={{ width: 50 }}
                         onClick={() => removeFromCart(e.id)}
                       >
                         <h2>
                           <IoTrashBinSharp />
                         </h2>
                       </button>
-                      <div style={{ width: 140, height: 140}} className="bg-warning overflow-hidden transition">
+                      <div style={{ width: 140, height: 140}} className="d-none d-md-block bg-warning overflow-hidden transition">
                         <img
                           src={e.image}
                           alt="Image"
@@ -49,7 +50,7 @@ const CartPage = () => {
                       </div>
                       <h2 className="fs-5 text-limit-1 w-50 d-flex justify-content-center">{e.name}</h2>
                       <h2 className="fs-5 w-25">{e.price}</h2>
-                      <div className="d-flex h-100 align-items-center justify-content-between w-25">
+                      <div style={{ width: 100 }} className="d-flex h-100 align-items-center justify-content-between">
                         <button
                           type="button"
                           style={{ height: 50 }}
