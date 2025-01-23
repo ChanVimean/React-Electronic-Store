@@ -35,7 +35,7 @@ const Payment = () => {
     };
 
   return (
-    <div className="col-12 col-lg-7 p-5">
+    <form className="col-12 col-lg-7 p-5 text-center">
 
       <h2 className="mb-5 fw-bold">Payment Method</h2>
 
@@ -122,7 +122,7 @@ const Payment = () => {
 
       {/* Last Name */}
       <div className="text-start my-3">
-        <h4 className="fs-5">Lsst Name</h4>
+        <h4 className="fs-5">Last Name</h4>
         <input 
           type="text" 
           className="form-control pe-5 border-0 bg-transparent shadow-none" 
@@ -132,7 +132,7 @@ const Payment = () => {
       </div>
 
       {/* Address */}
-      <div className="container mt-4">
+      <div className="container mt-4 text-start">
         <h4 className="mb-3">Billing Address</h4>
         <div className="form-check mb-3">
           <input
@@ -158,8 +158,16 @@ const Payment = () => {
           </div>
         )}
       </div>
+  
+      <button
+        type="submit"
+        className="btn bg-primary text-light fs-5 fw-medium mt-5 rounded-0"
+        onClick={(e) => e.preventDefault()}
+      >
+        Update Payment
+      </button>
 
-    </div>
+    </form>
   )
 }
 

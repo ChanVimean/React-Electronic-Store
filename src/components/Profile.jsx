@@ -96,7 +96,7 @@ const Profile = () => {
           className="btn bg-primary text-light fs-5 fw-medium mt-5 rounded-0"
           onClick={(e) => e.preventDefault()}
         >
-          Update
+          Update Profile
         </button>
 
       </form>
