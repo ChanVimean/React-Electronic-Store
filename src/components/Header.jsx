@@ -17,10 +17,13 @@ const Header = () => {
       {/* 1st Layer */}
       <nav className="container-fluid">
         <div className="container navbar">
-          <div className="col-3">
-            <a href="" className="font-poppins fs-3 fw-bold nav-link">
-              LOGO
-            </a>
+          <div className="col-3 bg-success p-0 overflow-hidden" style={{ height: 45, width: 90 }}>
+            <img
+              src="Zipbuy.png"
+              alt="Logo"
+              className="font-poppins fs-3 fw-bold nav-link w-100 h-100 object-fit-cover"
+              style={{ scale: 2 }}
+            />
           </div>
 
           <div className="col-9 col-lg-6 font-poppins">
