@@ -42,12 +42,12 @@ const Header = () => {
               isLogin ? (
                 <div className="d-flex align-items-center justify-content-end">
                   
-                  <div style={{ width: 45,  height: 45 }}
+                  <NavLink to={'/account'} style={{ width: 45,  height: 45 }}
                         className="mx-3 overflow-hidden rounded-circle bg-danger">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/800px-Cat_November_2010-1a.jpg"
+                    <img src="https://www.jiomart.com/images/product/original/rv3jnpppl2/tony-stark-iron-man-avengers-infinity-war-men-s-sunglasses-spectacle-frames-silver-blue-product-images-rv3jnpppl2-3-202207021924.jpg?im=Resize=(500,630)"
                           alt=""
                           className="object-fit-cover w-100 h-100" />
-                  </div>
+                  </NavLink>
 
                   <div className="dropdown">
                     <button className="border-0 dropdown-toggle"
