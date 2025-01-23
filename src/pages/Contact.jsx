@@ -46,7 +46,7 @@ const Contact = () => {
           <div className="col-12 col-md-6 col-lg-3 bg-blue-400 text-light text-center p-4">
             <IoIosMail className="fs-2 hover-blue-300" />
             <h4 className="my-3">EMAIL</h4>
-            <a href="#" className="pointer-event text-white hover-blue-300">rokrakdev@gmail.com</a>
+            <a href="#" className="pointer-event text-white hover-blue300">rokrakdev@gmail.com</a>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const Contact = () => {
               <br /><br />
               📍 Address: 123 Tech Street, Innovation City, TX 78910 <br />
               📞 Phone: (123) 456-7890 <br />
-              📧 Email: <a href="#">support@yourstorename.com</a><br />
+              📧 Email: <a href="#">support@rokrakservice.com</a><br />
               🕒 Business Hours: Mon-Fri: 9:00 AM - 6:00 PM | Sat: 10:00 AM - 4:00 PM
               <br /><br />
               Stay connected and never miss out on the latest deals and updates. We,re here to help 
@@ -104,6 +104,7 @@ const Contact = () => {
             <button
               type="submit"
               className="btn btn-primary w-75 border-0 fs-5 fw-medium rounded-0"
+              onClick={(e) => e.preventDefault()}
             >
               SUBMIT
             </button>
