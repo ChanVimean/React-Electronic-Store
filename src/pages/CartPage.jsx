@@ -48,7 +48,7 @@ const CartPage = () => {
                           className="w-100 h-100 object-fit-cover"
                         />
                       </div>
-                      <h2 className="fs-5 text-limit-1 w-50 d-flex justify-content-center">{e.name}</h2>
+                      <h2 className="fs-5 text-limit-1 w-50 d-flex text-start ps-3">{e.name}</h2>
                       <h2 className="fs-5 w-25">{e.price}</h2>
                       <div style={{ width: 100 }} className="d-flex h-100 align-items-center justify-content-between">
                         <button

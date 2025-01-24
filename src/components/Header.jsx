@@ -4,6 +4,9 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import { FaCartShopping } from "react-icons/fa6"
 import { NavLink } from "react-router-dom"
 import ProductContext from "../store/ProductProvider"
+import { CgDarkMode } from "react-icons/cg"
+import { IoSettingsSharp } from "react-icons/io5"
+import { RiLogoutBoxRFill } from "react-icons/ri"
 
 const Header = () => {
 
@@ -55,17 +58,26 @@ const Header = () => {
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                     >
-                      User Name
+                      Tony Stark
                     </button>
-                    <ul className="dropdown-menu">
+                    <ul className="dropdown-menu bg-light">
                       <li>
-                        <a className="dropdown-item" href="#">Action</a>
+                        <a className="dropdown-item" href="#">
+                          <CgDarkMode className="fs-5 me-2" />
+                          Theme
+                        </a>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">Another action</a>
+                        <a className="dropdown-item" href="#">
+                          <IoSettingsSharp className="fs-5 me-2" />
+                          Setting
+                        </a>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">Something else here</a>
+                        <a className="dropdown-item" href="#">
+                          <RiLogoutBoxRFill className="fs-5 me-2" />
+                          Logout
+                        </a>
                       </li>
                     </ul>
                   </div>

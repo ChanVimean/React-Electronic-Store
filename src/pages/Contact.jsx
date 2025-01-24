@@ -25,28 +25,36 @@ const Contact = () => {
         </div>
 
         {/* Conrtact */}
-        <div className="row mx-0 my-3 g-4">
-          <div className="col-12 col-md-6 col-lg-3 bg-blue-700 text-light text-center p-4">
-            <FaLocationDot className="fs-2 hover-blue-300 pointer-event" />
-            <h4 className="my-3">OUR MAIN OFFICE</h4>
-            <p>SoHo 94 Broadway St New York, NY 1001</p>
+        <div className="row mx-0 my-4">
+          <div className="col-12 col-md-6 col-lg-3 text-light text-center py-0 ps-0 pe-0 pe-md-3">
+            <div className="container-fluid bg-blue-700 w-100 h-100 p-4">
+              <FaLocationDot className="fs-2 hover-blue-300 pointer-event" />
+              <h4 className="my-3">OUR MAIN OFFICE</h4>
+              <p>SoHo 94 Broadway St New York, NY 1001</p>
+            </div>
           </div>
-          <div className="col-12 col-md-6 col-lg-3 bg-blue-600 text-light text-center p-4">
-            <FaPhoneAlt className="fs-2 hover-blue-300" />
-            <h4 className="my-3">PHONE NUMBER</h4>
-            <a href="#" className="hover-blue-300 pointer-event text-white text-decoration-none">123-456-789</a>
-            <br />
-            <a href="#" className="hover-blue-300 pointer-event text-white text-decoration-none">888-012-456 (Toll Free)</a>
+          <div className="col-12 col-md-6 col-lg-3 text-light text-center py-0 ps-0 pe-0 ps-md-2 pe-lg-3 mt-4 mt-md-0">
+            <div className="container-fluid bg-blue-600 w-100 h-100 p-4">
+              <FaPhoneAlt className="fs-2 hover-blue-300" />
+              <h4 className="my-3">PHONE NUMBER</h4>
+              <a href="#" className="hover-blue-300 pointer-event text-white text-decoration-none">123-456-789</a>
+              <br />
+              <a href="#" className="hover-blue-300 pointer-event text-white text-decoration-none">888-012-456 (Toll Free)</a>
+            </div>
           </div>
-          <div className="col-12 col-md-6 col-lg-3 bg-blue-500 text-light text-center p-4">
-            <FaFax className="fs-2 hover-blue-300" />
-            <h4 className="my-3">FAX</h4>
-            <a href="#" className="hover-blue-300 pointer-event text-white text-decoration-none">1-234-567-8900</a>
+          <div className="col-12 col-md-6 col-lg-3 text-light text-center py-0 ps-0 pe-0 ps-lg-2 pe-md-3 mt-4 mt-lg-0">
+            <div className="container-fluid bg-blue-500 w-100 h-100 p-4">
+              <FaFax className="fs-2 hover-blue-300" />
+              <h4 className="my-3">FAX</h4>
+              <a href="#" className="hover-blue-300 pointer-event text-white text-decoration-none">1-234-567-8900</a>
+            </div>
           </div>
-          <div className="col-12 col-md-6 col-lg-3 bg-blue-400 text-light text-center p-4">
-            <IoIosMail className="fs-2 hover-blue-300" />
-            <h4 className="my-3">EMAIL</h4>
-            <a href="#" className="pointer-event text-white hover-blue300">rokrakdev@gmail.com</a>
+          <div className="col-12 col-md-6 col-lg-3 text-light text-center py-0 ps-0 pe-0 ps-md-2 mt-4 mt-lg-0">
+            <div className="container-fluid bg-blue-400 w-100 h-100 p-4">
+              <IoIosMail className="fs-2 hover-blue-300" />
+              <h4 className="my-3">EMAIL</h4>
+              <a href="#" className="pointer-event text-white hover-blue300">rokrakdev@gmail.com</a>
+            </div>
           </div>
         </div>
 
